@@ -1,0 +1,3 @@
+transactions can be split into expenses, expenses linked to a transaction, specify category.
+Create a simple way to transfer from one category to another.
+
