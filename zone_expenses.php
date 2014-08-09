@@ -22,6 +22,8 @@ class zone_expenses extends zone_sequence
 	function initPages($params)
 	{
 		//do something
+		if(!isLoggedIn())
+			BaseRedirect('/login');
 		$this->guiAssign('zoneUrl', $this->getZoneUrl());
 	}
 	
@@ -56,7 +58,9 @@ class zone_expenses extends zone_sequence
 		}
 		$year = $this->getZoneParam('year');
 		$month = $this->getZoneParam('month');
+		//markprofile();
 		$expenses = Expense::getExpenseList($user->getId(), $month, $year, $searchValues);
+		//markprofile();
 		$categoryOptions = Category::getCategoryOptions($user->getId(), $month, $year);
 		$this->guiAssign('categoryOptions', $categoryOptions);//for the drop down category menus
 		$this->assignBudgetList($month, $year);

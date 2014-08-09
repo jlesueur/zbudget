@@ -14,6 +14,8 @@ class zone_budget extends zone_sequence
 	
 	function initPages($params)
 	{
+		if(!isLoggedIn())
+			BaseRedirect('/login');
 		$this->guiAssign('zoneUrl', $this->getZoneUrl());
 	}
 	

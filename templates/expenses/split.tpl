@@ -16,7 +16,7 @@ function updateAmount()
 	else
 		splitAmount = parseFloat(document.main_form.amount.value);
 	origAmount = parseFloat(document.main_form.origAmount.value);
-	document.main_form.newAmount.value = origAmount - splitAmount;
+	document.main_form.newAmount.value = (origAmount - splitAmount).toFixed(2);
 	document.getElementById('origAmountSpan').innerHTML = "$" + document.main_form.newAmount.value;	
 }
 {/literal}

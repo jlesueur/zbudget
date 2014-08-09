@@ -10,6 +10,8 @@ class zone_accounts extends zone
 	
 	function initPages($params)
 	{
+		if(!isLoggedIn())
+			BaseRedirect('/login');
 		$zparams = $this->getZoneParams();
 		$this->guiAssign('year', $zparams['year']);
 		$this->guiAssign('month', $zparams['month']);
